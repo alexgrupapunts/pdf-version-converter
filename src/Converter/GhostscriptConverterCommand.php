@@ -27,7 +27,7 @@ class GhostscriptConverterCommand
     public function __construct($customFlags = null)
     {
         $this->baseCommand .= $customFlags ?? $this->defaultFlags;
-        $this->baseCommand .= ' -o %s $SOURCE_PDF';
+        $this->baseCommand .= ' -o %s ${:SOURCE_PDF}';
     }
 
     public function run($originalFile, $newFile, $newVersion)
@@ -43,3 +43,4 @@ class GhostscriptConverterCommand
         }
     }
 }
+
